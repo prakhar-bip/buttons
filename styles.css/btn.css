@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+}
+
+div {
+  display: grid;
+
+  gap: 100px;
+}
+
+#first {
+  margin-top: 25%;
+  width: 10em;
+  border: none;
+  height: 2rem;
+  cursor: pointer;
+
+  color: whitesmoke;
+  background-color: brown;
+  font-size: 7vw;
+}
+
+#first:hover {
+  letter-spacing: 2px;
+  background-color: purple;
+  color: lime;
+  transform: rotateX(90);
+  transition: all 0.35s 0.05s cubic-bezier(0.8, -0.07, 0.47, 1.04);
+}
+
+#two {
+  height: 7vh;
+  cursor: pointer;
+  position: relative;
+}
+
+#two::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  background-image: linear-gradient(45deg, red, yellow, blue, lime);
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 4px;
+}
+
+#two::after:hover {
+  filter: blur(10px);
+  z-index: 1;
+  background-color: transparent;
+}
+
+#two:hover {
+  background-color: springgreen;
+}
+
+#three {
+  height: 7vh;
+  cursor: pointer;
+  border: 2px solid aqua;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  transition: letter-spacing 1s ease, transform 1s ease,background-color 1s ease;
+}
+
+#three:hover {
+  background-color: aqua;
+  letter-spacing: 5px;
+  transform: scale(1.1);
+  transition: transform 1s ease, letter-spacing 1s ease,background-color 1s ease;
+}
+
+#four {
+  height: 7vh;
+  cursor: pointer;
+  border-top-right-radius: 100vh;
+  border-bottom-left-radius: 100vh;
+  position: relative;
+}
+
+#four::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 100vh;
+  border-bottom-left-radius: 100vh;
+
+  background: transparent;
+  z-index: 1;
+
+  border-top: 5px solid green;
+  border-bottom: 5px solid lime;
+  transition: filter 0.5s ease;
+}
+
+#four:hover::after {
+  filter: blur(3px);
+  transition: filter 1s ease;
+}
+
